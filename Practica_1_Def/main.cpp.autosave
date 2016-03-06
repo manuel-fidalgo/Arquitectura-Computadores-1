@@ -107,11 +107,12 @@ void calificando(){
                 estudiantes
                 );
     //Añadimos un alumno mas...
-    f->agnadirAlumno(new Estudiante(d->dniAleatorio(),
+    f->agnadirAlumno(new Estudiante(d->nombreAleatorio(),
                                     d->apellidoAleatorio(),
                                     d->apellidoAleatorio(),
                                     d->dniAleatorio(),
                                     d->notaAleatoria(),
                                     d->notaAleatoria()
                         ));
+    f->darLista();
 }
