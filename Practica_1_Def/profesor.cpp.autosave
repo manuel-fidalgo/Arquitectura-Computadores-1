@@ -19,7 +19,21 @@ void Profesor::agnadirAlumno(Estudiante s){
     alumnos.push_back(s);
 }
 void Profesor::imprimirMejorAlumno(){
-
+    double acum=0;
+    int posicion=-1;
+    for (int i = 0; i < alumnos; ++i) {
+        if(alumnos[i].darNumeroNotas()==3){
+            if(alumnos[i].darNotaMedia()>acum){
+                acum = alumnos[i].darNotaMedia();
+                posicion=i;
+            }
+        }
+    }
+    if(posicion==-1){
+        cout << "Ninguno de los alumnos tiene tres notas" << endl;
+    }else{
+        cout << alumnos[posicion].imprimir();
+    }
 }
 int Profesor::darPosicionEstudiante(Estudiante s){
     for(int i=0; i<alumnos.size();i++){

@@ -1,14 +1,22 @@
 #ifndef PERSONA_H
 #define PERSONA_H
+#include <string.h>
+#include <vector>
+#include <iostream>
+#include <string>
+using namespace std;
 
 class Persona
 {
 
 public:
-    Persona();
-    Persona(char* name, char* subname_1,  char* subname_2, char* DNI);
-private:
-    char**datos;
+    Persona(string s, string s2, string s3, string s4);
+    string getID();
+protected:
+    string name;
+    string s_name;
+    string s2_name;
+    string dni;
 };
 
 #endif // PERSONA_H

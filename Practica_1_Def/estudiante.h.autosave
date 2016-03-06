@@ -15,6 +15,7 @@ public:
     vector<int> darNotas();
     int darNumeroNotas();
     double darNotaMedia();
+    void imprimir();
 };
 
 #endif // ESTUDIANTE_H

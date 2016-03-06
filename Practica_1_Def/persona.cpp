@@ -1,18 +1,13 @@
 #include "persona.h"
-#include <string>
-#include <string.h>
-#include <stdlib.h>
 
-Persona::Persona(){
 
+Persona::Persona(string s, string s2, string s3,string s4){
+    name = s;
+    s_name = s2;
+    s2_name = s3;
+    dni = s4;
 }
-Persona::Persona(char* name, char* subname_1,  char* subname_2, char* DNI){
-    datos = (char **)malloc(4*sizeof(char *));
-    for(int i=0; i<4; i++){
-        datos[i]= (char*)malloc(30*sizeof(char));
-    }
-    strcpy(datos[0],name);
-    strcpy(datos[1],subname_1);
-    strcpy(datos[2],subname_2);
-    strcpy(datos[3],DNI);
+string Persona::getID(){
+    return this->dni;
 }
+
