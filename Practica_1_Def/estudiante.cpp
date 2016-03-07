@@ -1,29 +1,35 @@
 #include "estudiante.h"
 
 
-Estudiante::Estudiante(string s1, string s2, string s3,string s4, int n, int n2, int n3){
-    name = s1;
-    s_name = s2;
-    s2_name = s3;
-    dni = s4;
-    notas.push_back(n);
-    notas.push_back(n2);
-    notas.push_back(n3);
+Estudiante::Estudiante(string s1, string s2, string s3,string s4, int n1, int n2, int n3){
+    this->name = s1;
+    this->s_name = s2;
+    this->s2_name = s3;
+    this->dni = s4;
+    this->notas.push_back(n1);
+    this->notas.push_back(n2);
+    this->notas.push_back(n3);
 }
-Estudiante::Estudiante(string s1, string s2, string s3,string s4, int n, int n2){
-    name = s1;
-    s_name = s2;
-    s2_name = s3;
-    dni = s4;
-    notas.push_back(n);
-    notas.push_back(n2);
+Estudiante::Estudiante(string s1, string s2, string s3,string s4, int n1, int n2){
+    this->name = s1;
+    this->s_name = s2;
+    this->s2_name = s3;
+    this->dni = s4;
+    this->notas.push_back(n1);
+    this->notas.push_back(n2);
 }
-Estudiante::Estudiante(string s1, string s2, string s3,string s4, int n){
-    name = s1;
-    s_name = s2;
-    s2_name = s3;
-    dni = s4;
-    notas.push_back(n2);
+Estudiante::Estudiante(string s1, string s2, string s3,string s4, int n1){
+    this->name = s1;
+    this->s_name = s2;
+    this->s2_name = s3;
+    this->dni = s4;
+    this->notas.push_back(n1);
+}
+Estudiante::Estudiante(){
+
+}
+Estudiante::~Estudiante(){
+
 }
 
 void Estudiante::agnadirNota(int n){

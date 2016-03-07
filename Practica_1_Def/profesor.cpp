@@ -1,5 +1,3 @@
-//El archivo .cpp solo implementa los metodos declarados en el header
-//Hace falta incluir el header e ya.
 #include "profesor.h"
 
 
@@ -9,15 +7,18 @@ Profesor::Profesor(string s, string s2, string s3, string s4, vector<Estudiante>
     s2_name = s3;
     dni = s4;
     alumnos=lista_estudiantes;
-    cout << "Se ha creado un profesor con estos alumnos: " << endl;
-    imprimirAlumnos();
+
+    cout << "Se ha creado al profesor: ";
+    this->imprimirProfesor();
+    cout << " con estos alumnos: " << endl;
+    this->imprimirAlumnos();
+
 }
-void Profesor::impirmirAlumnos(){
+void Profesor::imprimirAlumnos(){
     for (int var = 0; var < alumnos.size(); ++var) {
-        alumos[i].imprimir();
+        alumnos[var].imprimir();
     }
 }
-
 void Profesor::agnadirListaAlumnos(vector<Estudiante> lista_estudiantes){
     alumnos=lista_estudiantes;
 }
@@ -28,7 +29,7 @@ void Profesor::agnadirAlumno(Estudiante s){
 void Profesor::imprimirMejorAlumno(){
     double acum=0;
     int posicion=-1;
-    for (int i = 0; i < alumnos; ++i) {
+    for (int i = 0; i < alumnos.size(); ++i) {
         if(alumnos[i].darNumeroNotas()==3){
             if(alumnos[i].darNotaMedia()>acum){
                 acum = alumnos[i].darNotaMedia();
@@ -39,6 +40,13 @@ void Profesor::imprimirMejorAlumno(){
     if(posicion==-1){
         cout << "Ninguno de los alumnos tiene tres notas" << endl;
     }else{
-        cout << "El alumno con la mejor media es: "<< alumnos[posicion].imprimir();
+        cout << "El alumno con la mejor media es: ";
+        alumnos[posicion].imprimir();
     }
+}
+void Profesor::imprimirProfesor(){
+    ostringstream os;
+    os << this->name << this->s_name << this->s2_name << "DNI: "
+       << this->dni;
+    cout << os.str();
 }

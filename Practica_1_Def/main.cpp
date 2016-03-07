@@ -8,76 +8,40 @@
 #include <stdlib.h>
 #include <time.h>
 #include <sstream>
+
+//*Clases propias*//
+#include "datos.h"
+#include "persona.h"
+#include "estudiante.h"
+#include "profesor.h"
+
 using namespace std;
 
-class Datos{
-private:
-     string datos[15]{
-         //Nombres
-        "Juan",
-        "Luis",
-        "Marta",
-        "Sandra",
-        "Alba",
-        "Fernando",
-        "Alberto",
-         //Apellidos
-        "Garcia",
-        "Alvarez",
-        "Sutil",
-        "Ramirez",
-        "Fidalgo",
-        "Hernandez",
-        "Perez",
-        "Chimichanga"
-    };
-
-public:
-    Datos(){}
-    ~Datos(){}
-
-    string nombreAleatorio(){
-        return datos[rand()%7];
-    }
-    string apellidoAleatorio(){
-        return datos[7+rand()%(15-7)];
-    }
-    string dniAleatorio(){
-        ostringstream os;
-        for(int i=0; i<8; i++){
-            os << rand()%10;
-        }
-        os << datos[rand()%15].substr(0,1);
-        return os.str();
-    }
-    int notaAleatoria(){
-        return rand()%11;
-    }
-};
-//
+//Declaramos el metodo antes de usarlo
 void calificando();
+
 int main(void){
     calificando();
     return 0;
 }
 void calificando(){
-    Datos *d = new Datos(); //Objeto de tipo datos para rellenar la matriz
+    Datos *d = new Datos(); //Objeto de tipo datos para rellenar la lista alumnos y profesores;
     vector<Estudiante> estudiantes(30); //Vector de Estudiantes
     int numNotas;
     //Se rellena el vector de estudiantes con un numero aleatorio de estudiantes [5,15]
-    for(int i=0; i<d->notaAleatoria()+5;i++){
+    for(int i=0; i<(d->notaAleatoria()+5);i++){
         numNotas = (rand()%3)+1;
         if(numNotas==1){
-            estudiantes.push_back(new Estudiante(
-                                      d->dniAleatorio(),
+            estudiantes.push_back( * new Estudiante(
+                                      d->nombreAleatorio(),
                                       d->apellidoAleatorio(),
                                       d->apellidoAleatorio(),
                                       d->dniAleatorio(),
                                       d->notaAleatoria()
                                       ));
         }else if(numNotas==2){
-            estudiantes.push_back(new Estudiante(
-                                      d->dniAleatorio(),
+            estudiantes.push_back( * new Estudiante(
+                                      d->nombreAleatorio(),
                                       d->apellidoAleatorio(),
                                       d->apellidoAleatorio(),
                                       d->dniAleatorio(),
@@ -85,7 +49,7 @@ void calificando(){
                                       d->notaAleatoria()
                                       ));
         }else if(numNotas==3){
-            estudiantes.push_back(new Estudiante(
+            estudiantes.push_back( * new Estudiante(
                                       d->nombreAleatorio(),
                                       d->apellidoAleatorio(),
                                       d->apellidoAleatorio(),
@@ -98,6 +62,7 @@ void calificando(){
             cout << "Error de numero aletorio que decide el numero de notas;" << endl;
         }
     }
+
     //Intanciamos el profesor con su lista de estudiantes
     Profesor *f = new Profesor(
                 d->nombreAleatorio(),
@@ -106,12 +71,25 @@ void calificando(){
                 d->dniAleatorio(),
                 estudiantes
                 );
-    //Añadimos un alumno mas...
-    f->agnadirAlumno(new Estudiante(d->dniAleatorio(),
+    //Añadimos un par de alumnos mas...
+
+    f->agnadirAlumno( * new Estudiante(d->nombreAleatorio(),
                                     d->apellidoAleatorio(),
                                     d->apellidoAleatorio(),
                                     d->dniAleatorio(),
                                     d->notaAleatoria(),
                                     d->notaAleatoria()
                         ));
+    f->agnadirAlumno( * new Estudiante(d->nombreAleatorio(),
+                                    d->apellidoAleatorio(),
+                                    d->apellidoAleatorio(),
+                                    d->dniAleatorio(),
+                                    d->notaAleatoria(),
+                                    d->notaAleatoria(),
+                                    d->notaAleatoria()
+                        ));
+
+
+    f->imprimirAlumnos();
+    f->imprimirMejorAlumno();
 }

@@ -8,9 +8,11 @@ private:
     vector<int> notas;
 public:
 
-    Estudiante(string s1, string s2, string s3,string s4, int n, int n2, int n3);
-    Estudiante(string s1, string s2, string s3,string s4, int n, int n2);
-    Estudiante(string s1, string s2, string s3,string s4, int n);
+    Estudiante(string s1, string s2, string s3, string s4, int n, int n2, int n3);
+    Estudiante(string s1, string s2, string s3, string s4, int n, int n2);
+    Estudiante(string s1, string s2, string s3, string s4, int n);
+    Estudiante();
+    ~Estudiante();
     void agnadirNota(int nota);
     vector<int> darNotas();
     int darNumeroNotas();

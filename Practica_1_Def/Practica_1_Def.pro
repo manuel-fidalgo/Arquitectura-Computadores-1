@@ -6,9 +6,11 @@ CONFIG -= qt
 SOURCES += main.cpp \
     persona.cpp \
     estudiante.cpp \
-    profesor.cpp
+    profesor.cpp \
+    datos.cpp
 
 HEADERS += \
     persona.h \
     estudiante.h \
-    profesor.h
+    profesor.h \
+    datos.h
