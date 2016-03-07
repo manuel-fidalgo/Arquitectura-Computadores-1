@@ -27,8 +27,8 @@ void Profesor::agnadirAlumno(Estudiante s){
     alumnos.push_back(s);
 }
 void Profesor::imprimirMejorAlumno(){
-    double acum=0;
-    int posicion=-1;
+    double acum = 0;
+    int posicion = -1;
     for (int i = 0; i < alumnos.size(); ++i) {
         if(alumnos[i].darNumeroNotas()==3){
             if(alumnos[i].darNotaMedia()>acum){
@@ -37,6 +37,7 @@ void Profesor::imprimirMejorAlumno(){
             }
         }
     }
+    cout << endl; //Temas de formato;
     if(posicion==-1){
         cout << "Ninguno de los alumnos tiene tres notas" << endl;
     }else{
@@ -46,7 +47,7 @@ void Profesor::imprimirMejorAlumno(){
 }
 void Profesor::imprimirProfesor(){
     ostringstream os;
-    os << this->name << this->s_name << this->s2_name << "DNI: "
+    os << this->name << " " << this->s_name <<" " << this->s2_name << " " << "DNI: "
        << this->dni;
     cout << os.str();
 }

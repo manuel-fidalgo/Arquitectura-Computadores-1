@@ -2,6 +2,7 @@
 #define DATOS_H
 #include <string>
 #include <sstream>
+#include <time.h>
 using namespace std;
 
 class Datos
