@@ -8,7 +8,7 @@ using namespace std;
 class Datos
 {
 private:
-    string datos[15]{
+    string datos[20]{
         //Nombres
         "Juan",
         "Luis",
@@ -17,6 +17,9 @@ private:
         "Alba",
         "Fernando",
         "Alberto",
+        "Marcos",
+        "Eduardo",
+        "Pablo",
         //Apellidos
         "Garcia",
         "Alvarez",
@@ -25,7 +28,9 @@ private:
         "Fidalgo",
         "Hernandez",
         "Perez",
-        "Chimichanga"
+        "Castro",
+        "Lopez",
+        "Martinez"
     };
 
 public:

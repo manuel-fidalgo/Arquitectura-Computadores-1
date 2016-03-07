@@ -34,9 +34,12 @@ Estudiante::~Estudiante(){
 
 void Estudiante::agnadirNota(int n){
    if(darNumeroNotas()<3){
+       this->imprimir();
+       cout << "-> Ha agnadido una nota: " << n << endl;
        notas.push_back(n);
    }else{
-     cout << "Ya hay tres notas, no se pueden mas" << endl;
+       this->imprimir();
+       cout << "-> No puede agnadir mas notas, ya tiene tres." << endl;
    }
 }
 vector<int> Estudiante::darNotas(){
@@ -47,10 +50,13 @@ int Estudiante::darNumeroNotas(){
 }
 double Estudiante::darNotaMedia(){
     double suma;
+    double resultado;
+    suma = resultado = 0;
     for(int i=0; i<this->darNumeroNotas();i++){
         suma = suma + notas[i];
     }
-    return suma/this->darNumeroNotas();
+    resultado = suma/(this->darNumeroNotas());
+    return resultado;
 }
 void Estudiante::imprimir(){
     cout << this->name << " " << this->s_name << " "

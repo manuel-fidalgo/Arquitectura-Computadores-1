@@ -51,3 +51,6 @@ void Profesor::imprimirProfesor(){
        << this->dni;
     cout << os.str();
 }
+vector<Estudiante> Profesor::darAlumnos(){
+    return this->alumnos;
+}

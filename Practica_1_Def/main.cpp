@@ -79,11 +79,12 @@ void calificando(){
     f->imprimirAlumnos();
     f->imprimirMejorAlumno();
 
+    cout << endl;
+
     //Numero de alumnos aleatorios añaden una nota mas
     for (int var = 0; var < d->notaAleatoria(); ++var) {
-        estudiantes[rand()%estudiantes.size()].agnadirNota(d->notaAleatoria());
+        //Por implementar
     }
-
     cout << endl << endl << "----Algunos alumnos han agnadido notas-----" << endl << endl;
 
     f->imprimirAlumnos();
@@ -94,7 +95,7 @@ void calificando(){
 void rellenarVector(vector <Estudiante> * estudiantes, Datos * d){
     int numNotas;
     estudiantes->clear();
-    for(int i=0; i<(d->notaAleatoria()+5);i++){
+    for(int i=0; i<(d->notaAleatoria()+20);i++){
         numNotas = (rand()%3)+1;
         if(numNotas==1){
             estudiantes->push_back( * new Estudiante(

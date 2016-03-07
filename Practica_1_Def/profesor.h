@@ -17,6 +17,7 @@ public:
     void imprimirMejorAlumno(); //De los que tengan tres notas
     void imprimirProfesor();
     int notamedia(Estudiante s);
+    vector<Estudiante> darAlumnos();
 
 private:
     vector<Estudiante> alumnos;
