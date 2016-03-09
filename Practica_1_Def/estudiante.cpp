@@ -64,5 +64,6 @@ void Estudiante::imprimir(){
             for(int i=0; i<notas.size(); ++i){
              cout << notas[i] << " ";
             }
+            cout << " ---> Nota media: " << this->darNotaMedia();
             cout << endl;
 }

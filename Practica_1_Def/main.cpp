@@ -30,7 +30,6 @@ void calificando(){
     srand(time(NULL));
     Datos *d = new Datos(); //Objeto de tipo datos para rellenar la lista alumnos y profesores;
     vector<Estudiante> estudiantes; //Vector de Estudiantes
-    int numNotas;
     //Se rellena el vector de estudiantes con un numero aleatorio de estudiantes [5,15]
 
     rellenarVector(&estudiantes,d);
@@ -81,9 +80,15 @@ void calificando(){
 
     cout << endl;
 
-    //Numero de alumnos aleatorios añaden una nota mas
-    for (int var = 0; var < d->notaAleatoria(); ++var) {
-        //Por implementar
+    //un numero de alumnos aleatorios [5,10] han añadido notas nuevas
+    int posicion;
+    for (int var = 0; var < d->notaAleatoria()+5; ++var) {
+        posicion = rand()%f->darAlumnos().size();
+        vector<Estudiante> v_aux;
+        v_aux = f->darAlumnos();
+        v_aux[posicion].agnadirNota(d->notaAleatoria());
+        f->agnadirListaAlumnos(v_aux);
+
     }
     cout << endl << endl << "----Algunos alumnos han agnadido notas-----" << endl << endl;
 
